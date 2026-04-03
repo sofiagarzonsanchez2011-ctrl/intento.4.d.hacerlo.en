@@ -1,0 +1,266 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffd6a5, #ffadad);
+  font-family: 'Quicksand', sans-serif;
+}
+
+.card {
+  background: #ffb3b3;
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  animation: fadeIn 2s ease;
+  transition: transform 0.3s ease;
+  max-width: 320px;
+  backdrop-filter: blur(5px);
+}
+
+h1 {
+  margin-top: 20px;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #5a2a2a;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+h1, p {
+  text-align: center;
+  word-break: break-word;
+}
+
+
+.cake {
+  width: 100px;
+  height: 60px;
+  background: white;
+  margin: auto;
+  border-radius: 10px;
+  position: relative;
+  animation: drop 1.5s ease;
+}
+
+.candle {
+  width: 10px;
+  height: 25px;
+  background: orange;
+  position: absolute;
+  top: -25px;
+  left: 45px;
+}
+
+.candle::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: yellow;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  animation: flicker 0.3s infinite alternate;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes drop {
+  from { transform: translateY(-200px); }
+  to { transform: translateY(0); }
+}
+
+@keyframes flicker {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
+}
+
+.cake {
+  position: relative;
+  width: 120px;
+  height: 100px;
+  margin: auto;
+  animation: drop 1.5s ease;
+}
+
+/* Capas */
+.layer {
+  position: absolute;
+  width: 120px;
+  height: 25px;
+  border-radius: 10px;
+}
+
+.layer-bottom {
+  background: #ff8fab;
+  bottom: 0;
+}
+
+.layer-middle {
+  background: #ffb3c6;
+  bottom: 25px;
+}
+
+.layer-top {
+  background: #ffc2d1;
+  bottom: 50px;
+}
+
+/* Glaseado */
+.icing {
+  position: absolute;
+  width: 120px;
+  height: 20px;
+  background: white;
+  top: 30px;
+  border-radius: 10px;
+}
+
+/* Vela */
+.candle {
+  position: absolute;
+  width: 10px;
+  height: 30px;
+  background: orange;
+  top: -20px;
+  left: 55px;
+  border-radius: 3px;
+}
+
+/* Fuego más real */
+.flame {
+  width: 10px;
+  height: 12px;
+  background: yellow;
+  border-radius: 50%;
+  margin: auto;
+  animation: flicker 0.3s infinite alternate;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.cat {
+  position: relative;
+  width: 80px;
+  height: 70px;
+  background: black;
+  border-radius: 50%;
+  margin: 20px auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  margin: 10px auto;
+  transform: scale(1.1);
+  position: relative;
+  overflow: visible;
+
+}
+
+/* Orejas */
+.ear {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 22px solid black;
+  top: -10px; /* MÁS ABAJO */
+}
+
+/* parte interna rosada */
+.ear::after {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 4px;
+  width: 0;
+  height: 0;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 14px solid #ffb3c6;
+}
+
+.ear.left {
+  left: 0px;
+  transform: rotate(-25deg);
+}
+
+.ear.right {
+  right: 0px;
+  transform: rotate(25deg);
+}
+
+/* Ojos */
+.eye {
+  position: absolute;
+  width: 14px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  top: 25px;
+  animation: blink 3s infinite;
+}
+
+/* Pupila grande */
+.eye::after {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  left: 3.5px;
+}
+
+/* brillo cute */
+.eye::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.eye.left {
+  left: 20px;
+}
+
+.eye.right {
+  right: 20px;
+}
+
+/* Nariz */
+.nose {
+  position: absolute;
+  width: 10px;
+  height: 7px;
+  background: #ff8fab;
+  border-radius: 50%;
+  top: 42px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.eye {
+  animation: blink 3s infinite;
+}
+
+@keyframes blink {
+  0%, 90%, 100% { height: 12px; }
+  95% { height: 2px; }
+}
